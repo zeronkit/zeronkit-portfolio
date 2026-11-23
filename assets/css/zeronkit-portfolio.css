@@ -1,0 +1,70 @@
+/* ZeronKit Portfolio shared components. Themes override the --zkt-* variables and add their own look. */
+:root {
+	--zkt-lb-bg: rgba(10, 10, 10, .96);
+	--zkt-lb-fg: #f4f1ec;
+	--zkt-lb-font: inherit;
+	--zkt-error: #b3261e;
+	--zkt-success: #1e6b3a;
+}
+
+.screen-reader-text {
+	border: 0; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%);
+	height: 1px; width: 1px; margin: -1px; overflow: hidden; padding: 0;
+	position: absolute !important; word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+	clip: auto !important; clip-path: none; height: auto; width: auto; margin: 0;
+	z-index: 100000; top: 8px; left: 8px; padding: 12px 18px; background: #fff; color: #000;
+}
+
+.zkt-lightbox-link { display: block; cursor: zoom-in; }
+.zkt-lightbox-link img { display: block; width: 100%; height: auto; }
+
+/* Portfolio filter results */
+[data-zkt-portfolio] [data-zkt-cats][hidden] { display: none !important; }
+
+/* Lightbox */
+.zkt-lightbox {
+	border: 0; padding: 0; margin: 0; width: 100vw; height: 100vh; max-width: none; max-height: none;
+	background: var(--zkt-lb-bg); color: var(--zkt-lb-fg); font-family: var(--zkt-lb-font);
+}
+.zkt-lightbox::backdrop { background: var(--zkt-lb-bg); }
+.zkt-lightbox__figure {
+	position: absolute; inset: 64px 72px 72px; margin: 0;
+	display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+}
+.zkt-lightbox__figure img { max-width: 100%; max-height: calc(100% - 40px); object-fit: contain; user-select: none; }
+.zkt-lightbox__caption { font-size: 14px; letter-spacing: .04em; opacity: .8; text-align: center; min-height: 1.4em; }
+.zkt-lightbox__btn {
+	position: absolute; background: none; border: 0; color: inherit; cursor: pointer;
+	width: 52px; height: 52px; display: grid; place-items: center; font-size: 28px; line-height: 1; opacity: .8;
+}
+.zkt-lightbox__btn:hover, .zkt-lightbox__btn:focus-visible { opacity: 1; }
+.zkt-lightbox__btn:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.zkt-lightbox__close { top: 10px; right: 12px; }
+.zkt-lightbox__prev { left: 10px; top: 50%; transform: translateY(-50%); }
+.zkt-lightbox__next { right: 10px; top: 50%; transform: translateY(-50%); }
+.zkt-lightbox__count { position: absolute; top: 24px; left: 24px; font-size: 13px; letter-spacing: .12em; opacity: .7; }
+@media (max-width: 700px) {
+	.zkt-lightbox__figure { inset: 60px 8px 70px; }
+	.zkt-lightbox__prev, .zkt-lightbox__next { top: auto; bottom: 10px; transform: none; }
+}
+
+/* Contact form base (themes add the look) */
+.zkt-hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.zkt-field { display: flex; flex-direction: column; gap: 6px; }
+.zkt-field input, .zkt-field select, .zkt-field textarea { font: inherit; width: 100%; }
+.zkt-field__error { color: var(--zkt-error); font-size: .875em; margin: 0; }
+.zkt-form__notice { padding: 14px 18px; border: 1px solid currentColor; }
+.zkt-form__notice--success { color: var(--zkt-success); }
+.zkt-form__notice--error { color: var(--zkt-error); }
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Extras that themes print but that stay hidden until their setting is on (Settings > ZeronKit Portfolio). */
+body:not(.zkt-bookbtn) .zkt-book,
+body:not(.zkt-banner-on) .zkt-banner,
+body:not(.zkt-social-on) .zkt-social,
+body:not(.zkt-places) .zkt-filters__places { display: none !important; }

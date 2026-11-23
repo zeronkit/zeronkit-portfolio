@@ -1,0 +1,21 @@
+ZeronKit Portfolio
+Copyright (c) 2026 ZeronKit.
+https://zeronkit.com
+
+Everything in this plugin (the PHP, JavaScript and CSS code and the sample
+pictures in assets/samples) is free software under the GNU General Public
+License, version 2 or later.
+
+You may redistribute it and modify it under the terms of the GNU General
+Public License as published by the Free Software Foundation, either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY, without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+The full text of the GNU General Public License, version 2, is available at
+https://www.gnu.org/licenses/gpl-2.0.html
+
+The sample pictures are flat artwork made by ZeronKit for this plugin. They
+show no real people or places and are released under the same licence.
